@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class Gameboard extends Menu implements ActionListener {
 	
@@ -49,6 +50,9 @@ public class Gameboard extends Menu implements ActionListener {
 		for(int i = 0; i < 2; i++) {
 			scoreField[i] = new JLabel(); 
 			scoreField[i].setFont(new Font(null, Font.PLAIN, 30));
+			scoreField[i].setOpaque(true);
+			scoreField[i].setForeground(Color.white);
+			scoreField[i].setHorizontalAlignment(JLabel.CENTER);
 			scorePanel.add(scoreField[i]);
 		}
 		
@@ -65,6 +69,10 @@ public class Gameboard extends Menu implements ActionListener {
 				buttons[i].setFont(new Font(null, Font.PLAIN, 25));
 			}
 		}
+		scoreField[0].setBackground(Color.blue);
+		scoreField[1].setBackground(new Color(255, 132, 0));
+		
+		
 		buttons[9].setText("Reset");
 		buttons[10].setText("Menu");
 		
@@ -97,7 +105,7 @@ public class Gameboard extends Menu implements ActionListener {
 					}		
 					else {
 						buttons[i].setText("O");
-						buttons[i].setForeground(Color.ORANGE);
+						buttons[i].setForeground(new Color(255, 132, 0));
 						textField.setText("X's Turn");
 						checkGameState();
 						if(playerXcpuOn & endGame == false) {
@@ -178,7 +186,7 @@ public class Gameboard extends Menu implements ActionListener {
 				if(buttons[a].getText().equals("")) {
 					textField.setText("X's Turn");
 					buttons[a].setText("O");
-					buttons[a].setForeground(Color.ORANGE);
+					buttons[a].setForeground(new Color(255, 132, 0));
 					player1Turn = true;
 					break;
 				}	
@@ -209,7 +217,7 @@ public class Gameboard extends Menu implements ActionListener {
 			buttons[i].setEnabled(false);
 		}
 		textField.setText("O Wins!");
-		textField.setForeground(Color.ORANGE);
+		textField.setForeground(new Color(255, 132, 0));
 		endGame = true;
 		oScore++;
 		refreshScore();

@@ -6,8 +6,12 @@ The side you are (O or X), who starts first and the CPU's movements are randomly
 
 Gameboard frame: its has the gameboard, the game state panel, the score, the reset button and the menu button.
 
+<img align ="center" src="../images/game.PNG">
+
 - Game state panel: shows who's the turn and result of the game.
 
 - Reset button: resets the state of the game but preserving the sides (if player 1 was X then he will be X until the players return to the menu)
 
 - Menu button: returns to the menu, resets the score and memory about the players sides.
+
+<img align ="center" src="../images/menu.PNG">
